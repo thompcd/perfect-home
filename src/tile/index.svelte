@@ -42,7 +42,7 @@ afterUpdate(() => {
 		const bg = colorFromString(item.url.replace(/(^https?:\/\/)|(\/$)/g, ''));
 		const color = isDark(bg) ? '#ccc' : '#333';
 		style = `background-color: ${bg}; color: ${color};`;
-		innerText = item.title[0].toUpperCase();
+		innerText = item.title[0]?.toUpperCase() || "";
 	}
 	thumb.style = style;
 	thumb.innerText = innerText;
